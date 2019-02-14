@@ -15,7 +15,7 @@ Config
 // // import de la route
 const { mainRouter } = require('./routes/mainRoute');
 
-let front = require('./routes/frontRoute');
+// let front = require('./routes/frontRoute');
 // let api = require('./routes/apiRoute');
 
 //Definir le Port
@@ -25,8 +25,6 @@ const port = process.env.PORT; //présent dans le .env
 /*
 Server initialisation
 */
-   
-
 
 /*
 Start

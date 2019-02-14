@@ -12,7 +12,8 @@ Define globale routers
 */
 const mainRouter = Router({ mergeParams: true });
 const apiRouter = Router({ mergeParams: true });
-mainRouter.use('/', apiRouter);
+
+mainRouter.use('/api', apiRouter);
 //
 
 /*
