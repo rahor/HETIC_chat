@@ -1,16 +1,32 @@
 /*
-Config
+Imports 
+- The "mergeParams: true" enable to parse parameters true routers class
 */
+const express = require('express');
+const frontRouter = express.Router({ mergeParams: true });
+//
 
-let express = require('express');
-let router = express.Router();
+/* 
+Definition 
+*/
+class FrontRouterClass {
 
-// Configuration de la route 
-router.get('/',(req, res)=> { //Request et reponse
+    constructor() {}
 
-    //Envoit du fichier index
-    res.render('index', {title: "Salut", subTitle: "Bienvenue"});
-});
+    routes(){
+        // Get all paths from "/"
+        frontRouter.get( ['/*'], (req, res) => { res.render('index') });
+    };
 
-// Export du module
-module.exports = router; 
+    init(){
+        this.routes();
+        return frontRouter;
+    }
+}
+//
+
+/* 
+Export 
+*/
+module.exports = FrontRouterClass;
+//
