@@ -15,7 +15,11 @@ class FrontRouterClass {
 
     routes(){
         // Get all paths from "/"
-        frontRouter.get( ['/*'], (req, res) => { res.render('index') });
+        // frontRouter.get( ['/*'], (req, res) => { res.render('index') });
+        frontRouter.get('/', (req, res) => { res.render('index') });
+        frontRouter.get( ['/login'], (req, res) => { res.render('login') });
+        frontRouter.get( ['/register'], (req, res) => { res.render('register') });
+        frontRouter.get( ['/chat'], (req, res) => { res.render('chat') });
     };
 
     init(){

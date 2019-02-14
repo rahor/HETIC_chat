@@ -19,11 +19,13 @@ mainRouter.use('/api', apiRouter);
 /*
 Define specific routers
 */
-const frontRouter = new FrontRouterClass();
-mainRouter.use('/', frontRouter.init());
 
 const authRouter = new AuthRouterClass();
 apiRouter.use('/auth', authRouter.init());
+
+const frontRouter = new FrontRouterClass();
+mainRouter.use('/', frontRouter.init());
+
 //
 
 /* 
