@@ -9,6 +9,7 @@ const authRouter = express.Router({ mergeParams: true });
  // Add service
  const { sendApiSuccessResponse, sendApiErrorResponse } = require('../../services/serverResponse');
  const { checkFields } = require('../../services/request.checker');
+ const { registerUser } = require('./auth.controller');
  // 
 
 /* 
@@ -31,7 +32,7 @@ routes(){
 authRouter.post('/register', (req, res) => {
     // Check if body is present
     if (typeof req.body === 'undefined' || req.body === null) { sendBodyError(res, 'No body data provided') }
-    
+        
     // Check mandatory fields
     const { miss, extra, ok } = checkFields(['firstName', 'lastName', 'email', 'password'], req.body);
 
